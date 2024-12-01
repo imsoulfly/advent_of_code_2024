@@ -1,13 +1,17 @@
-defmodule Puzzle01 do
+defmodule Puzzle01Part1 do
   def solve do
+    load_lists_from_file()
+    |> sort()
+    |> sum_of_distances(0)
+  end
+
+  def load_lists_from_file do
     File.read!("./priv/static/puzzle_01_input.txt")
     |> String.split("\n", trim: true)
     |> Enum.reduce({[],[]}, fn line, {left, right} ->
       [l, r] = String.split(line, "   " )
       {[String.to_integer(l) | left], [String.to_integer(r) | right]}
     end)
-    |> sort()
-    |> sum_of_distances(0)
   end
 
   def sum_of_distances({[l | []], [r | []]}, d) do

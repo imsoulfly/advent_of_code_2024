@@ -1,4 +1,4 @@
-defmodule Puzzle01Part1 do
+defmodule Day01.Part1 do
   def solve do
     load_lists_from_file()
     |> sort()

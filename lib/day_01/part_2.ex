@@ -1,6 +1,6 @@
-defmodule Puzzle01Part2 do
+defmodule Day01.Part2 do
   def solve do
-    {left, right} = Puzzle01Part1.load_lists_from_file()
+    {left, right} = Day01.Part1.load_lists_from_file()
 
     groups_right = counted_groups(right)
     similarity_score(left, groups_right)
